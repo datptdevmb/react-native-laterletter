@@ -21,7 +21,7 @@ const COLORS = {
     overlay: 'rgba(0,0,0,0.5)',
 
 
-    background: '#F2F2F7',
+    background: '#8E632A',
     card: '#FFFFFF',
     border: '#E5E5EA',
 };

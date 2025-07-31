@@ -1,0 +1,23 @@
+{
+    "errors": {
+        "NETWORK_ERROR": "No internet connection",
+        "UNAUTHORIZED": "Session expired",
+        "SERVER_ERROR": "Server error, please try again",
+        "NOT_FOUND": "Resource not found",
+        "FORBIDDEN": "You do not have permission",
+        "BAD_REQUEST": "Invalid request",
+        "TIMEOUT": "Request timed out",
+        "TOO_MANY_REQUESTS": "Too many requests, please try again later",
+        "SERVICE_UNAVAILABLE": "Service temporarily unavailable",
+        "GATEWAY_TIMEOUT": "Gateway timed out",
+        "UNKNOWN_ERROR": "An unknown error occurred",
+        "WEB_SERVER_DOWN": "Web server is down",
+        "CONNECTION_TIMEOUT": "Connection timed out",
+        "ORIGIN_IS_UNREACHABLE": "Origin is unreachable",
+        "A_TIMEOUT_OCCURRED": "A timeout occurred",
+        "SSL_HANDSHAKE_FAILED": "SSL handshake failed",
+        "INVALID_SSL_CERTIFICATE": "Invalid SSL certificate",
+        "RAILWAY_TIMEOUT": "System timeout error",
+        "RAILWAY_ERROR": "System operation error"
+    }
+}

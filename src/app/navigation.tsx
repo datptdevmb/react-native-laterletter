@@ -1,43 +1,47 @@
 import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import type { DrawerScreenProps } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import CustomDrawer from '../layouts/CustomDrawer';
 
-import HomeScreen from '../pages/Homepage.screen';
+import ProfileScreen from '../features/user/screens/UserProfile';
+import CommunityScreen from '../features/user/screens/CommunityScreen';
+import AboutScreen from '../features/user/screens/AboutScreen';
 
-// Định nghĩa type cho các navigator nếu cần
-type LeftDrawerParamList = {
-  Home: undefined;
+import SettingsScreen from '../features/user/screens/UserSetting';
+import SupportScreen from '../features/user/screens/UserSupport';
+import HomeScreen from './Home';
+import COLORS from '../shared/constants/colors';
+
+const Drawer = createDrawerNavigator();
+
+const App = () => {
+  return (
+    <NavigationContainer
+
+    >
+      <Drawer.Navigator
+
+        drawerContent={(props) => <CustomDrawer {...props} />}
+        screenOptions={{
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: COLORS.background,
+          },
+          drawerStyle: {
+            backgroundColor: COLORS.background,
+          }
+
+        }}
+      >
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Hồ sơ cá nhân" component={ProfileScreen} />
+        <Drawer.Screen name="Cộng đồng" component={CommunityScreen} />
+        <Drawer.Screen name="Giới thiệu ứng dụng" component={AboutScreen} />
+        <Drawer.Screen name="Cài đặt" component={SettingsScreen} />
+        <Drawer.Screen name="Hỗ trợ" component={SupportScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
 };
 
-type RightDrawerParamList = {
-  LeftDrawer: undefined;
-};
-
-const LeftDrawer = createDrawerNavigator<LeftDrawerParamList>();
-const RightDrawer = createDrawerNavigator<RightDrawerParamList>();
-
-// Left Drawer
-const LeftDrawerScreen: React.FC = () => (
-  <LeftDrawer.Navigator screenOptions={{ drawerPosition: 'left' }}>
-    <LeftDrawer.Screen name="Home" component={HomeScreen} />
-  </LeftDrawer.Navigator>
-);
-
-// Right Drawer chứa Left Drawer
-const RightDrawerScreen: React.FC = () => (
-  <RightDrawer.Navigator
-    screenOptions={{ drawerPosition: 'right', headerShown: false }}
-  >
-    <RightDrawer.Screen name="LeftDrawer" component={LeftDrawerScreen} />
-  </RightDrawer.Navigator>
-);
-
-// App navigation
-const Navigation: React.FC = () => (
-  <NavigationContainer>
-    <RightDrawerScreen />
-  </NavigationContainer>
-);
-
-export default Navigation;
+export default App;

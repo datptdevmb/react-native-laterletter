@@ -6,7 +6,8 @@
  */
 
 
-import Navigation from '../navigation/navigation';
+import Navigation from './navigation';
+
 
 function App() {
 
