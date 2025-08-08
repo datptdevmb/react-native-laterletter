@@ -107,6 +107,24 @@ android {
     }
 }
 
+def REPO_ROOT = rootProject.rootDir.parentFile.absolutePath
+def SCRIPT    = new File(REPO_ROOT, "src/configs/bootsplash/android/generate.ts").absolutePath
+def TS_PROJ   = new File(REPO_ROOT, "tsconfig.bootsplash.json").absolutePath
+
+// tasks.register("generateBootsplash", Exec) {
+//     workingDir REPO_ROOT
+//     outputs.upToDateWhen { false } // luôn chạy, tránh cache
+//     environment "TS_NODE_PROJECT", TS_PROJ
+//     // Nếu muốn nhanh hơn có thể bật dòng dưới:
+//     // environment "TS_NODE_TRANSPILE_ONLY", "true"
+//     commandLine "npx", "ts-node", SCRIPT, "--platform=android"
+// }
+
+// tasks.named("preBuild") {
+//     dependsOn("generateBootsplash")
+// }
+
+
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
