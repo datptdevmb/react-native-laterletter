@@ -17,7 +17,8 @@ function App() {
     //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
     //   <NewAppScreen templateFileName="App.tsx" />
     // </View>
-    <Navigation />
+    // <Navigation />
+    <></>
   );
 }
 
